@@ -1,1 +1,1 @@
-# GPUImageDemo
+# CameraEffectDemo based on GPUImage
