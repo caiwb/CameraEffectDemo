@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3934ED9B20D138E60025A03C /* CLRGPUImageFiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3934ED9520D138E60025A03C /* CLRGPUImageFiler.m */; };
+		3934ED9C20D138E60025A03C /* CLRTwoInputImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3934ED9920D138E60025A03C /* CLRTwoInputImageFilter.m */; };
+		397952E220CE227000AF0AE5 /* MyShakeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 397952E120CE227000AF0AE5 /* MyShakeFilter.m */; };
 		398E718420CA1E8E00E07A0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 398E718320CA1E8E00E07A0C /* AppDelegate.m */; };
 		398E718720CA1E8E00E07A0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398E718620CA1E8E00E07A0C /* ViewController.m */; };
 		398E718C20CA1E8F00E07A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 398E718B20CA1E8F00E07A0C /* Assets.xcassets */; };
@@ -39,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3934ED9520D138E60025A03C /* CLRGPUImageFiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLRGPUImageFiler.m; sourceTree = "<group>"; };
+		3934ED9620D138E60025A03C /* CLRTwoInputImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLRTwoInputImageFilter.h; sourceTree = "<group>"; };
+		3934ED9720D138E60025A03C /* CLRGPUImageFiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLRGPUImageFiler.h; sourceTree = "<group>"; };
+		3934ED9920D138E60025A03C /* CLRTwoInputImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLRTwoInputImageFilter.m; sourceTree = "<group>"; };
+		397952E020CE227000AF0AE5 /* MyShakeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyShakeFilter.h; sourceTree = "<group>"; };
+		397952E120CE227000AF0AE5 /* MyShakeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyShakeFilter.m; sourceTree = "<group>"; };
 		398E717F20CA1E8E00E07A0C /* CameraEffectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraEffectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398E718220CA1E8E00E07A0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		398E718320CA1E8E00E07A0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,6 +103,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3934ED9320D138E60025A03C /* CLRFilter */ = {
+			isa = PBXGroup;
+			children = (
+				3934ED9720D138E60025A03C /* CLRGPUImageFiler.h */,
+				3934ED9520D138E60025A03C /* CLRGPUImageFiler.m */,
+				3934ED9620D138E60025A03C /* CLRTwoInputImageFilter.h */,
+				3934ED9920D138E60025A03C /* CLRTwoInputImageFilter.m */,
+			);
+			path = CLRFilter;
+			sourceTree = "<group>";
+		};
 		398E717620CA1E8E00E07A0C = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +211,11 @@
 		398E71BE20CA2F1000E07A0C /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				3934ED9320D138E60025A03C /* CLRFilter */,
 				398E71C020CA2F3500E07A0C /* GPUImageBeautifyFilter.h */,
 				398E71C120CA2F3500E07A0C /* GPUImageBeautifyFilter.m */,
+				397952E020CE227000AF0AE5 /* MyShakeFilter.h */,
+				397952E120CE227000AF0AE5 /* MyShakeFilter.m */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -402,12 +425,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				398E71C920CA616300E07A0C /* UIView+FrameAdjust.m in Sources */,
+				3934ED9B20D138E60025A03C /* CLRGPUImageFiler.m in Sources */,
 				398E71B920CA25D200E07A0C /* BaseEffectVC.m in Sources */,
+				397952E220CE227000AF0AE5 /* MyShakeFilter.m in Sources */,
 				398E718720CA1E8E00E07A0C /* ViewController.m in Sources */,
 				398E71BD20CA2C8B00E07A0C /* ToolPannel.m in Sources */,
 				398E71C220CA2F3500E07A0C /* GPUImageBeautifyFilter.m in Sources */,
 				398E719220CA1E8F00E07A0C /* main.m in Sources */,
 				398E718420CA1E8E00E07A0C /* AppDelegate.m in Sources */,
+				3934ED9C20D138E60025A03C /* CLRTwoInputImageFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

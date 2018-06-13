@@ -15,8 +15,6 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-@property (nonatomic, assign) BOOL openBeautify;
-
 @end
 
 @implementation ToolPannel
@@ -84,19 +82,75 @@
     //=================================================//
     
     btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btn setTitle:@"美颜" forState:UIControlStateNormal];
+    [btn setTitle:@"开始录制" forState:UIControlStateNormal];
     [btn sizeToFit];
-    [btn addTarget:self.delegate action:@selector(switchBeautify) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self.delegate action:@selector(startRecording) forControlEvents:UIControlEventTouchUpInside];
     [self.scrollView addSubview:btn];
     btn.origin = CGPointMake(15, lastBottomView.bottom + 15);
+    
+    lastBottomView = lastRightView = btn;
+    
+    btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setTitle:@"结束录制" forState:UIControlStateNormal];
+    [btn sizeToFit];
+    [btn addTarget:self.delegate action:@selector(stopRecording) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:btn];
+    btn.origin = CGPointMake(lastRightView.right + 15, lastBottomView.y);
+    
+    lastBottomView = lastRightView = btn;
+    
+    //=================================================//
+    
+    btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setTitle:@"美颜" forState:UIControlStateNormal];
+    [btn sizeToFit];
+    [btn addTarget:self action:@selector(switchBeautify:) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:btn];
+    btn.origin = CGPointMake(15, lastBottomView.bottom + 15);
+    
+    lastBottomView = lastRightView = btn;
+    
+    btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setTitle:@"蹦迪" forState:UIControlStateNormal];
+    [btn sizeToFit];
+    [btn addTarget:self action:@selector(switchShake:) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:btn];
+    btn.origin = CGPointMake(lastRightView.right + 15, lastBottomView.y);
+    
+    lastBottomView = lastRightView = btn;
+    
+    btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setTitle:@"扫描" forState:UIControlStateNormal];
+    [btn sizeToFit];
+    [btn addTarget:self action:@selector(switchCLR:) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:btn];
+    btn.origin = CGPointMake(lastRightView.right + 15, lastBottomView.y);
+    
+    lastBottomView = lastRightView = btn;
+    
+    //=================================================//
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.width, lastBottomView.bottom + 15);
 }
 
-- (void)switchBeautify {
+- (void)switchBeautify:(UIButton *)btn {
     if ([self.delegate respondsToSelector:@selector(openBeautifyFilter:)]) {
-        self.openBeautify = !self.openBeautify;
-        [self.delegate openBeautifyFilter:self.openBeautify];
+        btn.selected = !btn.selected;
+        [self.delegate openBeautifyFilter:btn.selected];
+    }
+}
+
+- (void)switchShake:(UIButton *)btn {
+    if ([self.delegate respondsToSelector:@selector(openShakeFilter:)]) {
+        btn.selected = !btn.selected;
+        [self.delegate openShakeFilter:btn.selected];
+    }
+}
+
+- (void)switchCLR:(UIButton *)btn {
+    if ([self.delegate respondsToSelector:@selector(openCLRFilter:)]) {
+        btn.selected = !btn.selected;
+        [self.delegate openCLRFilter:btn.selected];
     }
 }
 

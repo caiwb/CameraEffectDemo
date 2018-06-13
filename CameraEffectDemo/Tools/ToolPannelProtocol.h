@@ -19,6 +19,10 @@
 
 - (void)openBeautifyFilter:(BOOL)on;
 
+- (void)openShakeFilter:(BOOL)on;
+
+- (void)openCLRFilter:(BOOL)on;
+
 @end
 
 #endif /* ToolPannelProtocol_h */

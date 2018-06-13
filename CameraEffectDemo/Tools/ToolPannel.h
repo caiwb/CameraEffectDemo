@@ -11,7 +11,7 @@
 
 @interface ToolPannel : UIView
 
-@property (nonatomic, assign) id<ToolPannelProtocol> delegate;
+@property (nonatomic, weak) id<ToolPannelProtocol> delegate;
 
 - (void)show;
 
