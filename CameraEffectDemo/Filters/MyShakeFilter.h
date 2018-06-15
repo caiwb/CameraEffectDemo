@@ -12,10 +12,6 @@ extern NSString *const kGPUImageMergeFragmentShaderString;
 
 @interface MyShakeFilter : GPUImageFilterGroup
 
-@property (nonatomic, strong) GPUImageTransformFilter *shakeFilter;
-
-@property (nonatomic, strong) GPUImageTransformFilter *scaleFilter;
-
 @property (nonatomic, assign) double time;
 
 @end

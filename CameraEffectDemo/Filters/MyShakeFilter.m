@@ -27,6 +27,10 @@ NSString *const kGPUImageMergeFragmentShaderString = SHADER_STRING
 
 @interface MyShakeFilter ()
 
+@property (nonatomic, strong) GPUImageTransformFilter *shakeFilter;
+
+@property (nonatomic, strong) GPUImageTransformFilter *scaleFilter;
+
 @property (nonatomic, assign) float startTime;
 
 @end
